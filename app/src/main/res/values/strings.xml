@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Oblig1</string>
+    <string name="app_name">Name-app</string>
+    <string name="front_text">Welcome to this application!</string>
 </resources>
