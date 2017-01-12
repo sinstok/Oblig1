@@ -18,7 +18,8 @@
         <activity android:name=".NameList" />
         <activity android:name=".ImageGallery" />
         <activity android:name=".LearningMode" />
-        <activity android:name=".ShowPicture"></activity>
+        <activity android:name=".ShowPicture" />
+        <activity android:name=".ShowName"></activity>
     </application>
 
 </manifest>

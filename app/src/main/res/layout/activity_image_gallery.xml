@@ -16,46 +16,5 @@
         android:paddingTop="@dimen/activity_vertical_margin"
         tools:context="com.tsj.dat153.oblig1.ImageGallery">
 
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:src="@drawable/kramer"
-            android:layout_margin="10dp"/>
-
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:src="@drawable/seinfeld_jerry"
-            android:layout_margin="10dp"/>
-
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:src="@drawable/george_costanza"
-            android:layout_margin="10dp"/>
-
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:src="@drawable/lionel_richie"
-            android:layout_margin="10dp"/>
-
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:src="@drawable/kramer"
-            android:layout_margin="10dp"/>
-
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:src="@drawable/george_costanza"
-            android:layout_margin="10dp"/>
-
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:src="@drawable/seinfeld_jerry"
-            android:layout_margin="10dp"/>
     </LinearLayout>
 </ScrollView>

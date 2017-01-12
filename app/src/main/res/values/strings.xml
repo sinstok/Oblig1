@@ -4,5 +4,6 @@
     <string name="toNameList">Velg navn</string>
     <string name="toImageGallery">Velg bilde</string>
     <string name="toLearningMode">Læremodus</string>
+    <string name="title_activity_show_name">ShowName</string>
 </resources>
 
