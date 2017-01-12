@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Navn-app</string>
+    <string name="front_text">Velkommen til denne applikasjonen!</string>
+    <string name="toNameList">Velg navn</string>
+    <string name="toImageGallery">Velg bilde</string>
+    <string name="toLearningMode">Læringsmodus</string>
+    <string name="guessName">Gjett navn</string>
+</resources>

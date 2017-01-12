@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Name-App</string>
     <string name="front_text">Welcome to this application!</string>
-    <string name="toNameList">Velg navn</string>
-    <string name="toImageGallery">Velg bilde</string>
-    <string name="toLearningMode">Læremodus</string>
-    <string name="title_activity_show_name">ShowName</string>
+    <string name="toNameList">Choose name</string>
+    <string name="toImageGallery">Choose picture</string>
+    <string name="toLearningMode">Learning mode</string>
+    <string name="guessName">Guess Name</string>
 </resources>
 
