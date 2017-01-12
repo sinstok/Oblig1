@@ -6,4 +6,5 @@
     <string name="toImageGallery">Velg bilde</string>
     <string name="toLearningMode">Læringsmodus</string>
     <string name="guessName">Gjett navn</string>
+    <string name="button">Gjett!</string>
 </resources>
