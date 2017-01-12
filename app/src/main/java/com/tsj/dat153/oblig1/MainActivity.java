@@ -15,11 +15,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
-
-    @Override
-    protected  void onStart(){
-        super.onStart();
 
         liste = new ArrayList<Person>();
         Person p1 = new Person("Jerry", R.drawable.seinfeld_jerry);
@@ -28,6 +23,11 @@ public class MainActivity extends AppCompatActivity {
         liste.add(p1);
         liste.add(p2);
         liste.add(p3);
+    }
+
+    @Override
+    protected  void onStart(){
+        super.onStart();
     }
 
     public void toNameList(View view){
