@@ -6,14 +6,14 @@ package com.tsj.dat153.oblig1;
 
 public class Person {
     private String name;
-    private String image;
+    private int image;
 
-    public Person(String n, String i){
+    public Person(String n, int i){
         this.name = n;
         this.image = i;
     }
 
-    public String getImage() {
+    public int getImage() {
         return image;
     }
 

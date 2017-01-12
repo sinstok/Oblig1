@@ -15,7 +15,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NameList" />
+        <activity android:name=".NameList"/>
         <activity android:name=".ImageGallery" />
         <activity android:name=".LearningMode"></activity>
     </application>

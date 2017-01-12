@@ -20,11 +20,11 @@ public class NameList extends AppCompatActivity {
 
     }
 
-    public void viewImage(Veiw view){
-        p1 = new Person("Sindre", "android.resources://" + "com.tsj.dat153.oblig1/drawable/seifeld_jerrry.jpg");
+    public void viewImage(View view){
+        p1 = new Person("Sindre", R.drawable.seinfeld_jerry);
         //p2 = new Person("Joakim", "android.resources://" + "com.tsj.dat153.oblig1/drawable/George-costanze.jpg");
         //p3 = new Person("Tomas", "android.resources://" + "com.tsj.dat153.oblig1/drawable/Kramer.jpg");
         ImageView layout = (ImageView) findViewById(R.id.image);
-        layout.setImageResource(R.drawable.seinfeld_jerry);
+        layout.setImageResource(p1.getImage());
     }
 }
