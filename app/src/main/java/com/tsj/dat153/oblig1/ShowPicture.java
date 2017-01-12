@@ -17,13 +17,13 @@ public class ShowPicture extends AppCompatActivity {
         ViewGroup layout = (ViewGroup) findViewById(R.id.activity_show_picture);
 
         Intent intent = getIntent();
-        int message = intent.getIntExtra("picture", 0);
+        int image = intent.getIntExtra("picture", 0);
         ImageView view = new ImageView(this);
         layout.addView(view);
-        if (message == 0) {
+        if (image == 0) {
             view.setImageResource(R.drawable.lionel_richie);
         } else {
-            view.setImageResource(message);
+            view.setImageResource(image);
         }
     }
 }

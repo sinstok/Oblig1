@@ -16,7 +16,7 @@ public class LearningMode extends AppCompatActivity {
         int counter = 0;
         int score = 0;
 
-        List<Person> liste = MainActivity.liste;
+        List<Person> liste = MainActivity.PersonList;
 
         ViewGroup layout = (ViewGroup) findViewById(R.id.activity_learning_mode);
         ImageView image = new ImageView(this);

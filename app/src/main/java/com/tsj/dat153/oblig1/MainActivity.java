@@ -1,6 +1,5 @@
 package com.tsj.dat153.oblig1;
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,19 +9,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    public static List<Person> liste;
+    public static List<Person> PersonList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        liste = new ArrayList<Person>();
+        PersonList = new ArrayList<Person>();
         Person p1 = new Person("Jerry", R.drawable.seinfeld_jerry);
         Person p2 = new Person("George", R.drawable.george_costanza);
         Person p3 = new Person("Kramer", R.drawable.kramer);
-        liste.add(p1);
-        liste.add(p2);
-        liste.add(p3);
+        PersonList.add(p1);
+        PersonList.add(p2);
+        PersonList.add(p3);
     }
 
     @Override

@@ -18,7 +18,7 @@ public class NameList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_name_list);
 
-        List<Person> list = MainActivity.liste;
+        List<Person> list = MainActivity.PersonList;
         ViewGroup layout = (ViewGroup) findViewById(R.id.activity_name_list);
 
         for(int i = 0; i < list.size(); i++){

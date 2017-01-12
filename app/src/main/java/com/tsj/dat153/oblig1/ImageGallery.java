@@ -1,12 +1,10 @@
 package com.tsj.dat153.oblig1;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -22,7 +20,7 @@ public class ImageGallery extends AppCompatActivity {
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         params.setMargins(0, 10, 0, 50);
 
-        List<Person> list = MainActivity.liste;
+        List<Person> list = MainActivity.PersonList;
         ViewGroup layout = (ViewGroup) findViewById(R.id.activity_image_gallery);
 
         for(int i = 0; i < list.size(); i++){
