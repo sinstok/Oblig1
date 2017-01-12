@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Name-App</string>
     <string name="front_text">Welcome to this application!</string>
+    <string name="button">Knapp</string>
 </resources>
