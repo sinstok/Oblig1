@@ -1,6 +1,7 @@
 package com.tsj.dat153.oblig1;
 
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ViewGroup;
@@ -18,31 +19,26 @@ public class NameList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_name_list);
-    }
 
-    @Override
-    protected void onStart(){
-        super.onStart();
-        PersonContainer cont = (PersonContainer) getApplicationContext();
-        List<Person> liste = cont.getPersonList();
+        List<Person> list = MainActivity.liste;
         ViewGroup layout = (ViewGroup) findViewById(R.id.activity_name_list);
-        /*Button b1 = new Button(this);
-        b1.setText();
-        Button*/
-        for(int i = 0; i < liste.size(); i++){
+
+        for(int i = 0; i < list.size(); i++){
             Button button = new Button(this);
-            button.setText(liste.get(i).getName());
+            button.setText(list.get(i).getName());
+            final Person p = list.get(i);
+            button.setOnClickListener(new View.OnClickListener(){
+                public void onClick(View v) {
+                    viewImage(p);
+                }
+            });
             layout.addView(button);
         }
-
     }
 
-    public void viewImage(View view){
-
-        /*ImageView image = (ImageView) findViewById(R.id.image);
-        image.setImageResource(p1.getImage());*/
-        /*TextView textView = new TextView(this);
-        textView.setText(p1.getName());
-        layout.addView(textView);*/
+    public void viewImage(Person p){
+        Intent intent = new Intent(this, ShowPicture.class);
+        intent.putExtra("picture", p.getImage());
+        startActivity(intent);
     }
 }
