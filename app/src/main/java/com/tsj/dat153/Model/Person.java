@@ -1,4 +1,4 @@
-package com.tsj.dat153.oblig1;
+package com.tsj.dat153.model;
 
 /**
  * Created by Sindre on 12.01.2017.

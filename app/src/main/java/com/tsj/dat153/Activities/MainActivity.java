@@ -1,27 +1,27 @@
-package com.tsj.dat153.oblig1;
+package com.tsj.dat153.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.tsj.dat153.database.DAO;
+import com.tsj.dat153.oblig1.R;
+
+import com.tsj.dat153.model.Person;
 
 public class MainActivity extends AppCompatActivity {
-    public static List<Person> PersonList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        PersonList = new ArrayList<Person>();
         Person p1 = new Person("Jerry", R.drawable.seinfeld_jerry);
         Person p2 = new Person("George", R.drawable.george_costanza);
         Person p3 = new Person("Kramer", R.drawable.kramer);
-        PersonList.add(p1);
-        PersonList.add(p2);
-        PersonList.add(p3);
+        DAO.addPerson(p1);
+        DAO.addPerson(p2);
+        DAO.addPerson(p3);
     }
 
     @Override
@@ -30,17 +30,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void toNameList(View view){
-        Intent intent = new Intent(this, NameList.class);
+        Intent intent = new Intent(this, NameListActivity.class);
         startActivity(intent);
     }
 
     public void toImageGallery(View view){
-        Intent intent = new Intent(this, ImageGallery.class);
+        Intent intent = new Intent(this, ImageGalleryActivity.class);
         startActivity(intent);
     }
 
     public void toLearningMode(View view){
-        Intent intent = new Intent(this, LearningMode.class);
+        Intent intent = new Intent(this, LearningModeActivity.class);
         startActivity(intent);
     }
 }

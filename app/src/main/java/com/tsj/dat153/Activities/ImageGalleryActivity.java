@@ -1,16 +1,21 @@
-package com.tsj.dat153.oblig1;
+package com.tsj.dat153.activities;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.tsj.dat153.database.DAO;
+import com.tsj.dat153.oblig1.R;
+
 import java.util.List;
 
-public class ImageGallery extends AppCompatActivity {
+import com.tsj.dat153.model.Person;
+
+public class ImageGalleryActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +25,7 @@ public class ImageGallery extends AppCompatActivity {
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         params.setMargins(0, 10, 0, 50);
 
-        List<Person> list = MainActivity.PersonList;
+        List<Person> list = DAO.getPersonList();
         ViewGroup layout = (ViewGroup) findViewById(R.id.activity_image_gallery);
 
         for(int i = 0; i < list.size(); i++){
@@ -38,7 +43,7 @@ public class ImageGallery extends AppCompatActivity {
     }
 
     public void viewName(Person p){
-        Intent intent = new Intent(this, ShowName.class);
+        Intent intent = new Intent(this, ShowNameActivity.class);
         intent.putExtra("name", p.getName());
         startActivity(intent);
     }

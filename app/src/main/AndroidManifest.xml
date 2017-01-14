@@ -8,18 +8,19 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.tsj.dat153.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NameList" />
-        <activity android:name=".ImageGallery" />
-        <activity android:name=".LearningMode" />
-        <activity android:name=".ShowPicture" />
-        <activity android:name=".ShowName"></activity>
+        <activity android:name="com.tsj.dat153.activities.NameListActivity" />
+        <activity android:name="com.tsj.dat153.activities.ImageGalleryActivity" />
+        <activity android:name="com.tsj.dat153.activities.LearningModeActivity" />
+        <activity android:name="com.tsj.dat153.activities.ShowPictureActivity" />
+        <activity android:name="com.tsj.dat153.activities.ShowNameActivity">
+        </activity>
     </application>
 
 </manifest>

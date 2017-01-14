@@ -1,4 +1,4 @@
-package com.tsj.dat153.oblig1;
+package com.tsj.dat153.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class ShowName extends AppCompatActivity {
+import com.tsj.dat153.oblig1.R;
+
+public class ShowNameActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
