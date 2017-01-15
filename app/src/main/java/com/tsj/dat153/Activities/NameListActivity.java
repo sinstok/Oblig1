@@ -2,6 +2,7 @@ package com.tsj.dat153.activities;
 
 
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ViewGroup;
@@ -22,6 +23,9 @@ public class NameListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_name_list);
+
+        ActionBar bar = getSupportActionBar();
+        bar.setDisplayHomeAsUpEnabled(true);
 
         List<Person> list = DAO.getPersonList();
         ViewGroup layout = (ViewGroup) findViewById(R.id.activity_name_list);

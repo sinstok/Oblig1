@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.support.v7.app.ActionBar;
 
 import com.tsj.dat153.database.DAO;
 import com.tsj.dat153.oblig1.R;
@@ -20,6 +21,9 @@ public class LearningModeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_learning_mode);
         int counter = 0;
         int score = 0;
+
+        ActionBar bar = getSupportActionBar();
+        bar.setDisplayHomeAsUpEnabled(true);
 
         List<Person> liste = DAO.getPersonList();
 
