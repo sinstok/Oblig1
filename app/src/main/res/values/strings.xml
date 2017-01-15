@@ -6,5 +6,8 @@
     <string name="toLearningMode">Learning mode</string>
     <string name="guessName">Guess Name</string>
     <string name="guessButton">Guess!</string>
+    <string name="activity_learning">Learning mode</string>
+    <string name="activity_choose_name">Choose name</string>
+    <string name="activity_choose_picture">Choose picture</string>
 </resources>
 

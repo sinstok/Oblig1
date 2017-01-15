@@ -15,9 +15,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.tsj.dat153.activities.NameListActivity" />
-        <activity android:name="com.tsj.dat153.activities.ImageGalleryActivity" />
-        <activity android:name="com.tsj.dat153.activities.LearningModeActivity" />
+        <activity android:name="com.tsj.dat153.activities.NameListActivity"
+            android:label="@string/activity_choose_name"/>
+        <activity android:name="com.tsj.dat153.activities.ImageGalleryActivity"
+            android:label="@string/activity_choose_picture"/>
+        <activity android:name="com.tsj.dat153.activities.LearningModeActivity"
+            android:label="@string/activity_learning"/>
         <activity android:name="com.tsj.dat153.activities.ShowPictureActivity" />
         <activity android:name="com.tsj.dat153.activities.ShowNameActivity">
         </activity>
