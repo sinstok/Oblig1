@@ -9,6 +9,6 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:gravity="center"
-    tools:context="com.tsj.dat153.activities.ShowNameActivity">
+    tools:context="activities.ShowNameActivity">
 
 </RelativeLayout>
