@@ -19,9 +19,11 @@ public class MainActivity extends AppCompatActivity {
         Person p1 = new Person("Jerry", R.drawable.seinfeld_jerry);
         Person p2 = new Person("George", R.drawable.george_costanza);
         Person p3 = new Person("Kramer", R.drawable.kramer);
+        Person p4 = new Person("Lionel", R.drawable.lionel_richie);
         DAO.addPerson(p1);
         DAO.addPerson(p2);
         DAO.addPerson(p3);
+        DAO.addPerson(p4);
     }
 
     @Override
