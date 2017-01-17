@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.tsj.dat153">
+    package="com.tsj.dat153.oblig1">
 
     <application
         android:allowBackup="true"
@@ -8,21 +8,26 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="activities.MainActivity">
+        <activity android:name="com.tsj.dat153.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="activities.NameListActivity"
-            android:label="@string/activity_choose_name"/>
-        <activity android:name="activities.ImageGalleryActivity"
-            android:label="@string/activity_choose_picture"/>
-        <activity android:name="activities.LearningModeActivity"
-            android:label="@string/activity_learning"/>
-        <activity android:name="activities.ShowPictureActivity" />
-        <activity android:name=".activities.ShowNameActivity">
+        <activity android:name="com.tsj.dat153.activities.NameListActivity"
+            android:label="@string/activity_choose_name"
+            android:parentActivityName="com.tsj.dat153.activities.MainActivity"/>
+        <activity android:name="com.tsj.dat153.activities.ImageGalleryActivity"
+            android:label="@string/activity_choose_picture"
+            android:parentActivityName="com.tsj.dat153.activities.MainActivity"/>
+        <activity android:name="com.tsj.dat153.activities.LearningModeActivity"
+            android:label="@string/activity_learning"
+            android:parentActivityName="com.tsj.dat153.activities.MainActivity"/>
+        <activity android:name="com.tsj.dat153.activities.ShowPictureActivity"
+            android:parentActivityName="com.tsj.dat153.activities.ShowPictureActivity"/>
+        <activity android:name="com.tsj.dat153.activities.ShowNameActivity"
+            android:parentActivityName="com.tsj.dat153.activities.ShowNameActivity">
         </activity>
     </application>
 
