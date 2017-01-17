@@ -1,6 +1,7 @@
 package com.tsj.dat153.activities;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -23,11 +24,9 @@ import com.tsj.dat153.model.Person;
 
 public class LearningModeActivity extends AppCompatActivity {
 
-    private int randNumb;
     private List<Person> liste;
     private int counter;
     private int score;
-    private Random number;
     private ViewGroup layout;
     private ImageView image;
 
@@ -45,23 +44,12 @@ public class LearningModeActivity extends AppCompatActivity {
 
         liste = DAO.getPersonList();
 
-        number = new Random();
-        //randNumb = number.nextInt(liste.size() - 1);
-
         long seed = System.nanoTime();
         Collections.shuffle(liste, new Random(seed));
 
         layout = (ViewGroup) findViewById(R.id.activity_learning_mode);
 
-        //Person pers = liste.get(counter);
-
         nextPerson();
-
-        /*ViewGroup layout = (ViewGroup) findViewById(R.id.activity_learning_mode);
-        ImageView image = new ImageView(this);
-        image.setImageResource(pers.getImage());
-        image.setId(randNumb);
-        layout.addView(image, 0);*/
     }
 
     public void onGuess(View v){
@@ -76,10 +64,15 @@ public class LearningModeActivity extends AppCompatActivity {
         String count = Integer.toString(counter);
         counterView.setText(count);
 
-        if(per.getName().equals(name)){
+        if(per.getName().toLowerCase().equals(name.trim().toLowerCase())){
             score++;
             String sco = Integer.toString(score);
             scoreView.setText(sco);
+            scoreView.setTextColor(Color.GREEN);
+            counterView.setTextColor(Color.GREEN);
+        } else{
+            scoreView.setTextColor(Color.RED);
+            counterView.setTextColor(Color.RED);
         }
         textView.setText("");
         nextPerson();
