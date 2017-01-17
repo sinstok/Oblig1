@@ -38,4 +38,10 @@
         android:layout_height="wrap_content"
         android:text="@string/toLearningMode"
         android:onClick="toLearningMode"/>
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="@string/photo"
+        android:onClick="takePicture"/>
 </LinearLayout>

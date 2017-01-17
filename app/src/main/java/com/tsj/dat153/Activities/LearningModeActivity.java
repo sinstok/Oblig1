@@ -81,7 +81,7 @@ public class LearningModeActivity extends AppCompatActivity {
     public void nextPerson(){
         if(counter < liste.size()){
             Person pers = liste.get(counter);
-            image.setImageResource(pers.getImage());
+            image.setImageBitmap(pers.getImage());
         } else {
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);

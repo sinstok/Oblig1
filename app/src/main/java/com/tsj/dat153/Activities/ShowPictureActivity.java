@@ -1,6 +1,7 @@
 package com.tsj.dat153.activities;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,13 +23,13 @@ public class ShowPictureActivity extends AppCompatActivity {
         ViewGroup layout = (ViewGroup) findViewById(R.id.activity_show_picture);
 
         Intent intent = getIntent();
-        int image = intent.getIntExtra("picture", 0);
+        Bitmap image = (Bitmap) intent.getParcelableExtra("picture");
         ImageView view = new ImageView(this);
         layout.addView(view);
-        if (image == 0) {
+        if (image == null) {
             view.setImageResource(R.drawable.lionel_richie);
         } else {
-            view.setImageResource(image);
+            view.setImageBitmap(image);
         }
     }
 }

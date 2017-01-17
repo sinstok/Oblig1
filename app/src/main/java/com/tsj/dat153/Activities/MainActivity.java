@@ -1,26 +1,41 @@
 package com.tsj.dat153.activities;
 
+import android.content.ContentResolver;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.tsj.dat153.database.DAO;
 import com.tsj.dat153.oblig1.R;
 
 import com.tsj.dat153.model.Person;
 
+import java.io.File;
+import java.net.URI;
+
 public class MainActivity extends AppCompatActivity {
+
+    private Uri mImageUri;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         if(DAO.getPersonList().size() == 0) {
-            Person p1 = new Person("Jerry", R.drawable.seinfeld_jerry);
-            Person p2 = new Person("George", R.drawable.george_costanza);
-            Person p3 = new Person("Kramer", R.drawable.kramer);
-            Person p4 = new Person("Lionel", R.drawable.lionel_richie);
+            Person p1 = new Person("Jerry", BitmapFactory.decodeResource(this.getResources(), R.drawable.seinfeld_jerry));
+            Person p2 = new Person("George", BitmapFactory.decodeResource(this.getResources(), R.drawable.george_costanza));
+            Person p3 = new Person("Kramer", BitmapFactory.decodeResource(this.getResources(), R.drawable.kramer));
+            Person p4 = new Person("Lionel", BitmapFactory.decodeResource(this.getResources(), R.drawable.lionel_richie));
             DAO.addPerson(p1);
             DAO.addPerson(p2);
             DAO.addPerson(p3);
@@ -46,5 +61,25 @@ public class MainActivity extends AppCompatActivity {
     public void toLearningMode(View view){
         Intent intent = new Intent(this, LearningModeActivity.class);
         startActivity(intent);
+    }
+
+    public void takePicture(View view){
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(takePictureIntent, 1);
+        }
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Intent intent = new Intent(this, ChooseNameActivity.class);
+        if (requestCode == 1 && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            //Bitmap imageBitmap = (Bitmap) extras.get("data");
+            intent.putExtra("picture", (Bitmap) extras.get("data"));
+            startActivity(intent);
+        }
+
     }
 }

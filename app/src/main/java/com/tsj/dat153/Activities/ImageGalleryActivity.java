@@ -35,7 +35,7 @@ public class ImageGalleryActivity extends AppCompatActivity {
 
         for(int i = 0; i < list.size(); i++){
             ImageView im = new ImageView(this);
-            im.setImageResource(list.get(i).getImage());
+            im.setImageBitmap(list.get(i).getImage());
             im.setLayoutParams(params);
             layout.addView(im);
             final Person p = list.get(i);

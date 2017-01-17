@@ -15,20 +15,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.tsj.dat153.activities.NameListActivity"
+        <activity
+            android:name="com.tsj.dat153.activities.NameListActivity"
             android:label="@string/activity_choose_name"
-            android:parentActivityName="com.tsj.dat153.activities.MainActivity"/>
-        <activity android:name="com.tsj.dat153.activities.ImageGalleryActivity"
+            android:parentActivityName="com.tsj.dat153.activities.MainActivity" />
+        <activity
+            android:name="com.tsj.dat153.activities.ImageGalleryActivity"
             android:label="@string/activity_choose_picture"
-            android:parentActivityName="com.tsj.dat153.activities.MainActivity"/>
-        <activity android:name="com.tsj.dat153.activities.LearningModeActivity"
+            android:parentActivityName="com.tsj.dat153.activities.MainActivity" />
+        <activity
+            android:name="com.tsj.dat153.activities.LearningModeActivity"
             android:label="@string/activity_learning"
-            android:parentActivityName="com.tsj.dat153.activities.MainActivity"/>
-        <activity android:name="com.tsj.dat153.activities.ShowPictureActivity"
-            android:parentActivityName="com.tsj.dat153.activities.ShowPictureActivity"/>
-        <activity android:name="com.tsj.dat153.activities.ShowNameActivity"
-            android:parentActivityName="com.tsj.dat153.activities.ShowNameActivity">
-        </activity>
+            android:parentActivityName="com.tsj.dat153.activities.MainActivity" />
+        <activity
+            android:name="com.tsj.dat153.activities.ShowPictureActivity"
+            android:parentActivityName="com.tsj.dat153.activities.ShowPictureActivity" />
+        <activity
+            android:name="com.tsj.dat153.activities.ShowNameActivity"
+            android:parentActivityName="com.tsj.dat153.activities.ShowNameActivity"></activity>
+        <activity android:name="com.tsj.dat153.activities.ChooseNameActivity"></activity>
     </application>
 
 </manifest>
