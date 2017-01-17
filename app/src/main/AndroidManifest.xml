@@ -22,7 +22,7 @@
         <activity android:name="activities.LearningModeActivity"
             android:label="@string/activity_learning"/>
         <activity android:name="activities.ShowPictureActivity" />
-        <activity android:name="activities.ShowNameActivity">
+        <activity android:name=".activities.ShowNameActivity">
         </activity>
     </application>
 
