@@ -94,10 +94,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         Intent intent = new Intent(this, ChooseNameActivity.class);
         if (requestCode == 1 && resultCode == RESULT_OK) {
-            //Bitmap map = BitmapFactory.decodeFile(mCurrentPhotoPath);
-            //Bundle extras = data.getExtras();
-            //Bitmap imageBitmap = (Bitmap) extras.get("data");
-            //intent.putExtra("picture", (Bitmap) extras.get("data"));
             intent.putExtra("picture", mCurrentPhotoPath);
             startActivity(intent);
         }
@@ -109,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
         // Create an image file name
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFileName = "JPEG_" + timeStamp + "_";
-        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        File storageDir = getExternalFilesDir("pictures/");
         File image = File.createTempFile(
                 imageFileName,  /* prefix */
                 ".jpg",         /* suffix */
