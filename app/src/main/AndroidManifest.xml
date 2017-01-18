@@ -46,7 +46,9 @@
         <activity
             android:name="com.tsj.dat153.activities.ShowNameActivity"
             android:parentActivityName="com.tsj.dat153.activities.ShowNameActivity"></activity>
-        <activity android:name="com.tsj.dat153.activities.ChooseNameActivity"></activity>
+        <activity android:name="com.tsj.dat153.activities.ChooseNameActivity"
+            android:label="@string/activity_add_name">
+        </activity>
     </application>
 
 </manifest>

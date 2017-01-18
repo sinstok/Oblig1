@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.view.View;
 import android.widget.EditText;
@@ -23,6 +24,10 @@ public class ChooseNameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_name);
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+
         intent = getIntent();
 
     }
@@ -38,7 +43,7 @@ public class ChooseNameActivity extends AppCompatActivity {
 
         DAO.addPerson(new Person(name, imageBitmap));
 
-        Intent intent2 = new Intent(this, MainActivity.class);
+        Intent intent2 = new Intent(this, NameListActivity.class);
         startActivity(intent2);
 
     }
