@@ -2,6 +2,7 @@ package com.tsj.dat153.activities;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -31,7 +32,9 @@ public class ChooseNameActivity extends AppCompatActivity {
         Editable editableText = textEdit.getEditableText();
         String name = editableText.toString();
 
-        Bitmap imageBitmap = (Bitmap) intent.getParcelableExtra("picture");
+        //Bitmap imageBitmap = (Bitmap) intent.getParcelableExtra("picture");
+        String currentPhoto = intent.getStringExtra("picture");
+        Bitmap imageBitmap = BitmapFactory.decodeFile(currentPhoto);
 
         DAO.addPerson(new Person(name, imageBitmap));
 
