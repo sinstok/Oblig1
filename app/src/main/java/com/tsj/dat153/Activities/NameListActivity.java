@@ -45,7 +45,7 @@ public class NameListActivity extends AppCompatActivity {
 
     public void viewImage(Person p){
         Intent intent = new Intent(this, ShowPictureActivity.class);
-        intent.putExtra("picture", p.getImage());
+        intent.putExtra("name", p.getName());
         startActivity(intent);
     }
 }

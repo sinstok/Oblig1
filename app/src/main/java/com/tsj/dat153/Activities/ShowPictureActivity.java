@@ -8,9 +8,14 @@ import android.os.Bundle;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.tsj.dat153.database.DAO;
+import com.tsj.dat153.model.Person;
 import com.tsj.dat153.oblig1.R;
 
+import java.util.List;
+
 public class ShowPictureActivity extends AppCompatActivity {
+    private List<Person> personList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,10 +25,13 @@ public class ShowPictureActivity extends AppCompatActivity {
         ActionBar bar = getSupportActionBar();
         bar.setDisplayHomeAsUpEnabled(true);
 
+        personList = DAO.getPersonList();
+
         ViewGroup layout = (ViewGroup) findViewById(R.id.activity_show_picture);
 
         Intent intent = getIntent();
-        Bitmap image = (Bitmap) intent.getParcelableExtra("picture");
+        String name = intent.getStringExtra("name");
+        Bitmap image = DAO.getBitmap(name);
         ImageView view = new ImageView(this);
         layout.addView(view);
         if (image == null) {
@@ -32,4 +40,5 @@ public class ShowPictureActivity extends AppCompatActivity {
             view.setImageBitmap(image);
         }
     }
+
 }

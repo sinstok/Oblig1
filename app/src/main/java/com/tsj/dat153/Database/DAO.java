@@ -1,5 +1,7 @@
 package com.tsj.dat153.database;
 
+import android.graphics.Bitmap;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,5 +20,17 @@ public class DAO {
 
     public static List<Person> getPersonList() {
         return new ArrayList(personList);
+    }
+
+    public static Bitmap getBitmap(String n){
+        Bitmap bitmap = null;
+        boolean found = false;
+        for(int i = 0; i < personList.size() && !found; i++){
+            if(personList.get(i).getName().equals(n)){
+                bitmap = personList.get(i).getImage();
+                found = true;
+            }
+        }
+        return bitmap;
     }
 }
