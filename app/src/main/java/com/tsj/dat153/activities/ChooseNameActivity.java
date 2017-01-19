@@ -37,6 +37,10 @@ public class ChooseNameActivity extends AppCompatActivity {
         Editable editableText = textEdit.getEditableText();
         String name = editableText.toString();
 
+        if(name.trim().equals("")){
+            return;
+        }
+
         //Bitmap imageBitmap = (Bitmap) intent.getParcelableExtra("picture");
         String currentPhoto = intent.getStringExtra("picture");
         Bitmap imageBitmap = BitmapFactory.decodeFile(currentPhoto);
