@@ -78,6 +78,8 @@ public class LearningModeActivity extends AppCompatActivity {
             scoreView.setTextColor(Color.RED);
             counterView.setTextColor(Color.RED);
         }
+        DAO.setScore(score);
+        DAO.setCount(counter);
         textView.setText("");
         nextPerson();
     }
