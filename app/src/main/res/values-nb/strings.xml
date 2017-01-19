@@ -13,7 +13,7 @@
     <string name="activity_add_name">Legg til navn til bildet</string>
     <string name="score">Poengsum</string>
     <string name="photo">Legg til person</string>
-    <string name="choose_name">Skriv inn navnet ditt</string>
-    <string name="choose_name_button">Velg dette navnet?</string>
+    <string name="choose_name">Navn</string>
+    <string name="choose_name_button">Lagre</string>
     <string name="camera_action">Kamera</string>
 </resources>
