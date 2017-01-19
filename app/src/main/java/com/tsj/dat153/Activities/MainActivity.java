@@ -40,16 +40,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
 
-        if(DAO.getPersonList().size() == 0) {
-            Person p1 = new Person("Jerry", BitmapFactory.decodeResource(this.getResources(), R.drawable.seinfeld_jerry));
-            Person p2 = new Person("George", BitmapFactory.decodeResource(this.getResources(), R.drawable.george_costanza));
-            Person p3 = new Person("Kramer", BitmapFactory.decodeResource(this.getResources(), R.drawable.kramer));
-            Person p4 = new Person("Lionel", BitmapFactory.decodeResource(this.getResources(), R.drawable.lionel_richie));
-            DAO.addPerson(p1);
-            DAO.addPerson(p2);
-            DAO.addPerson(p3);
-            DAO.addPerson(p4);
-        }
+
         TextView scoreTV = (TextView) findViewById(R.id.score_textview);
         String lastScore = getResources().getString(R.string.last_score);
         scoreTV.setText(lastScore + " " + DAO.getScore() + "/" + DAO.getCount());
