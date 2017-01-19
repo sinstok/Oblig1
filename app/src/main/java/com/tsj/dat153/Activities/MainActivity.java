@@ -40,17 +40,14 @@ public class MainActivity extends AppCompatActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
 
-
-        TextView scoreTV = (TextView) findViewById(R.id.score_textview);
-        String lastScore = getResources().getString(R.string.last_score);
-        scoreTV.setText(lastScore + " " + DAO.getScore() + "/" + DAO.getCount());
-
     }
 
     @Override
     protected  void onResume(){
         super.onResume();
-
+        TextView scoreTV = (TextView) findViewById(R.id.score_textview);
+        String lastScore = getResources().getString(R.string.last_score);
+        scoreTV.setText(lastScore + " " + DAO.getScore() + "/" + DAO.getCount());
     }
 
     public void toNameList(View view){
