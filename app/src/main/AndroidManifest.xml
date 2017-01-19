@@ -19,7 +19,7 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"></meta-data>
+                android:resource="@xml/file_paths"/>
         </provider>
 
         <activity android:name="com.tsj.dat153.activities.MainActivity">
@@ -40,16 +40,24 @@
         <activity
             android:name="com.tsj.dat153.activities.LearningModeActivity"
             android:label="@string/activity_learning"
-            android:parentActivityName="com.tsj.dat153.activities.MainActivity" />
+            android:parentActivityName="com.tsj.dat153.activities.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.tsj.dat153.activities.ShowPictureActivity"
             android:parentActivityName="com.tsj.dat153.activities.ShowPictureActivity" />
+
         <activity
             android:name="com.tsj.dat153.activities.ShowNameActivity"
-            android:parentActivityName="com.tsj.dat153.activities.ShowNameActivity"></activity>
-        <activity android:name="com.tsj.dat153.activities.ChooseNameActivity"
-            android:label="@string/activity_add_name">
-        </activity>
+            android:parentActivityName="com.tsj.dat153.activities.ShowNameActivity"/>
+
+        <activity
+            android:name="com.tsj.dat153.activities.ChooseNameActivity"
+            android:label="@string/activity_add_name"/>
     </application>
 
 </manifest>

@@ -25,15 +25,16 @@ public class DAO extends Application{
         Person p2 = new Person("George", BitmapFactory.decodeResource(this.getResources(), R.drawable.george_costanza));
         Person p3 = new Person("Kramer", BitmapFactory.decodeResource(this.getResources(), R.drawable.kramer));
         Person p4 = new Person("Lionel", BitmapFactory.decodeResource(this.getResources(), R.drawable.lionel_richie));
-        DAO.addPerson(p1);
-        DAO.addPerson(p2);
-        DAO.addPerson(p3);
-        DAO.addPerson(p4);
+        personList.add(p1);
+        personList.add(p2);
+        personList.add(p3);
+        personList.add(p4);
     }
     public static void addPerson(Person p){
         personList.add(p);
     }
 
+    //
     public static List<Person> getPersonList() {
         return new ArrayList(personList);
     }
