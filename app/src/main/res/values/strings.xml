@@ -15,5 +15,6 @@
     <string name="choose_name">Name</string>
     <string name="choose_name_button">Save</string>
     <string name="camera_action">Camera</string>
+    <string name="last_score">Most recent score:</string>
 </resources>
 

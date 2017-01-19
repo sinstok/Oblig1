@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.tsj.dat153.database.DAO;
@@ -49,11 +50,16 @@ public class MainActivity extends AppCompatActivity {
             DAO.addPerson(p3);
             DAO.addPerson(p4);
         }
+        TextView scoreTV = (TextView) findViewById(R.id.score_textview);
+        String lastScore = getResources().getString(R.string.last_score);
+        scoreTV.setText(lastScore + " " + DAO.getScore() + "/" + DAO.getCount());
+
     }
 
     @Override
-    protected  void onStart(){
-        super.onStart();
+    protected  void onResume(){
+        super.onResume();
+
     }
 
     public void toNameList(View view){

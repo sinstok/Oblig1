@@ -13,6 +13,8 @@ import com.tsj.dat153.model.Person;
 
 public class DAO {
     private static List<Person> personList = new ArrayList<Person>();
+    private static int score = 0;
+    private static int count = 0;
 
     public static void addPerson(Person p){
         personList.add(p);
@@ -32,5 +34,21 @@ public class DAO {
             }
         }
         return bitmap;
+    }
+
+    public static int getCount() {
+        return count;
+    }
+
+    public static int getScore() {
+        return score;
+    }
+
+    public static void setScore(int score) {
+        DAO.score = score;
+    }
+
+    public static void setCount(int count) {
+        DAO.count = count;
     }
 }

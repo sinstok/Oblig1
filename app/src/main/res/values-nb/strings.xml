@@ -16,4 +16,5 @@
     <string name="choose_name">Navn</string>
     <string name="choose_name_button">Lagre</string>
     <string name="camera_action">Kamera</string>
+    <string name="last_score">Siste poengsum:</string>
 </resources>
