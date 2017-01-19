@@ -16,7 +16,7 @@ import com.tsj.dat153.oblig1.R;
 import java.util.List;
 
 public class ShowPictureActivity extends AppCompatActivity {
-    private List<Person> personList;
+    private List<Person> persons;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class ShowPictureActivity extends AppCompatActivity {
         ActionBar bar = getSupportActionBar();
         bar.setDisplayHomeAsUpEnabled(true);
 
-        personList = DAO.getPersonList();
+        persons = DAO.getPersonList();
 
         ViewGroup layout = (ViewGroup) findViewById(R.id.activity_show_picture);
 

@@ -34,15 +34,15 @@ public class ImageGalleryActivity extends AppCompatActivity {
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         params.setMargins(70, 10, 70, 50);
 
-        List<Person> list = DAO.getPersonList();
+        List<Person> persons = DAO.getPersonList();
         ViewGroup layout = (ViewGroup) findViewById(R.id.activity_image_gallery);
 
-        for(int i = 0; i < list.size(); i++){
+        for(int i = 0; i < persons.size(); i++){
             ImageView im = new ImageView(this);
-            im.setImageBitmap(list.get(i).getImage());
+            im.setImageBitmap(persons.get(i).getImage());
             im.setLayoutParams(params);
             layout.addView(im);
-            final Person p = list.get(i);
+            final Person p = persons.get(i);
             im.setOnClickListener(new View.OnClickListener(){
                 public void onClick(View v) {
                     viewName(p);

@@ -45,13 +45,13 @@ public class NameListActivity extends AppCompatActivity {
         ActionBar bar = getSupportActionBar();
         bar.setDisplayHomeAsUpEnabled(true);
 
-        List<Person> list = DAO.getPersonList();
+        List<Person> persons = DAO.getPersonList();
         ViewGroup layout = (ViewGroup) findViewById(R.id.activity_name_list);
 
-        for(int i = 0; i < list.size(); i++){
+        for(int i = 0; i < persons.size(); i++){
             Button button = new Button(this);
-            button.setText(list.get(i).getName());
-            final Person p = list.get(i);
+            button.setText(persons.get(i).getName());
+            final Person p = persons.get(i);
             button.setOnClickListener(new View.OnClickListener(){
                 public void onClick(View v) {
                     viewImage(p);

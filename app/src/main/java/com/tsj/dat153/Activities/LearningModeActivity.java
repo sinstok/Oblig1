@@ -25,7 +25,7 @@ import com.tsj.dat153.model.Person;
 
 public class LearningModeActivity extends AppCompatActivity {
 
-    private List<Person> liste;
+    private List<Person> persons;
     private int counter;
     private int score;
     private ViewGroup layout;
@@ -46,10 +46,10 @@ public class LearningModeActivity extends AppCompatActivity {
         ActionBar bar = getSupportActionBar();
         bar.setDisplayHomeAsUpEnabled(true);
 
-        liste = DAO.getPersonList();
+        persons = DAO.getPersonList();
 
         long seed = System.nanoTime();
-        Collections.shuffle(liste, new Random(seed));
+        Collections.shuffle(persons, new Random(seed));
 
         layout = (ViewGroup) findViewById(R.id.activity_learning_mode);
 
@@ -62,7 +62,7 @@ public class LearningModeActivity extends AppCompatActivity {
         EditText textView = (EditText) findViewById(R.id.guess_name);
         Editable text = textView.getEditableText();
         String name = text.toString();
-        Person per = liste.get(counter);
+        Person per = persons.get(counter);
 
         counter++;
         String count = Integer.toString(counter);
@@ -83,8 +83,8 @@ public class LearningModeActivity extends AppCompatActivity {
     }
 
     public void nextPerson(){
-        if(counter < liste.size()){
-            Person pers = liste.get(counter);
+        if(counter < persons.size()){
+            Person pers = persons.get(counter);
             image.setImageBitmap(pers.getImage());
         } else {
             Intent intent = new Intent(this, MainActivity.class);
