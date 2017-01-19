@@ -5,5 +5,5 @@
         android:id="@+id/action_camera"
         android:title="@string/camera_action"
         app:showAsAction="ifRoom"
-        android:icon="@drawable/ic_action_camera" />
+        android:icon="@drawable/ic_action_camera_white" />
 </menu>
