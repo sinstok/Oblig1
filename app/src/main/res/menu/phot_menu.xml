@@ -5,7 +5,7 @@
         android:id="@+id/action_gallery"
         android:title="@string/camera_action"
         app:showAsAction="ifRoom"
-        android:icon="@android:drawable/ic_menu_gallery" />
+        android:icon="@drawable/ic_action_name_white" />
     <item
         android:id="@+id/action_camera"
         android:title="@string/camera_action"
