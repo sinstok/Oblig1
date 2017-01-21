@@ -13,15 +13,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ListView;
 
 import com.tsj.dat153.database.DAO;
+import com.tsj.dat153.helpers.PersonListViewAdapter;
 import com.tsj.dat153.model.Person;
 import com.tsj.dat153.oblig1.R;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -36,16 +40,19 @@ public class NameListActivity extends AppCompatActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
 
-        myToolbar.inflateMenu(R.menu.phot_menu);
-
-
         ActionBar bar = getSupportActionBar();
         bar.setDisplayHomeAsUpEnabled(true);
 
-        List<Person> persons = DAO.getPersonList();
-        ViewGroup layout = (ViewGroup) findViewById(R.id.activity_name_list);
+        ArrayList<Person> persons = (ArrayList<Person>) DAO.getPersonList();
 
-        for(int i = 0; i < persons.size(); i++){
+        PersonListViewAdapter adapter = new PersonListViewAdapter(this, persons);
+
+        ListView listView = (ListView) findViewById(R.id.text_list);
+        listView.setAdapter(adapter);
+
+        //ViewGroup layout = (ViewGroup) findViewById(R.id.activity_name_list);
+
+        /*for(int i = 0; i < persons.size(); i++){
             Button button = new Button(this);
             button.setText(persons.get(i).getName());
             final Person p = persons.get(i);
@@ -55,7 +62,18 @@ public class NameListActivity extends AppCompatActivity {
                 }
             });
             layout.addView(button);
-        }
+        }*/
+
+        final Intent intent = new Intent(this, ShowPictureActivity.class);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Person item = (Person) parent.getItemAtPosition(position);
+                intent.putExtra("name", item.getName());
+                startActivity(intent);
+            }
+        });
     }
 
     public void viewImage(Person p){
@@ -68,10 +86,6 @@ public class NameListActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.phot_menu, menu);
 
-        MenuItem photoItem = menu.findItem(R.id.action_camera);
-
-        // Configure the search info and add any event listeners...
-
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -79,7 +93,6 @@ public class NameListActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_camera:
-                // User chose the "Settings" item, show the app settings UI...
                 takePicture();
                 return true;
 
