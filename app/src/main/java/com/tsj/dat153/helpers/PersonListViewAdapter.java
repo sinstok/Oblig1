@@ -29,7 +29,7 @@ public class PersonListViewAdapter extends ArrayAdapter<Person> {
     }
 
     @Override
-    public android.view.View getView(int position, View convertView, ViewGroup parent){
+    public View getView(int position, View convertView, ViewGroup parent){
         Person person = getItem(position);
 
         ViewHolder viewHolder;
