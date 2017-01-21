@@ -23,12 +23,18 @@ public class DAO extends Application{
     public void onCreate(){
         Person p1 = new Person("Jerry", BitmapFactory.decodeResource(this.getResources(), R.drawable.seinfeld_jerry));
         Person p2 = new Person("George", BitmapFactory.decodeResource(this.getResources(), R.drawable.george_costanza));
-        Person p3 = new Person("Kramer", BitmapFactory.decodeResource(this.getResources(), R.drawable.kramer));
+        Person p3 = new Person("Cosmo", BitmapFactory.decodeResource(this.getResources(), R.drawable.kramer));
         Person p4 = new Person("Lionel", BitmapFactory.decodeResource(this.getResources(), R.drawable.lionel_richie));
+        Person p5 = new Person("Joakim", BitmapFactory.decodeResource(this.getResources(), R.drawable.joakim));
+        Person p6 = new Person("Sindre", BitmapFactory.decodeResource(this.getResources(), R.drawable.sindre));
+        Person p7 = new Person("Tomas", BitmapFactory.decodeResource(this.getResources(), R.drawable.tomas));
         personList.add(p1);
         personList.add(p2);
         personList.add(p3);
         personList.add(p4);
+        personList.add(p5);
+        personList.add(p6);
+        personList.add(p7);
     }
     public static void addPerson(Person p){
         personList.add(p);
