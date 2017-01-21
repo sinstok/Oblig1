@@ -10,7 +10,7 @@
     <string name="activity_choose_name">Choose name</string>
     <string name="activity_choose_picture">Choose picture</string>
     <string name="activity_add_name">Add name to picture</string>
-    <string name="score">Score</string>
+    <string name="score">Score: %1$d/%2$d</string>
     <string name="photo">Add person</string>
     <string name="choose_name">Name</string>
     <string name="choose_name_button">Save</string>

@@ -30,6 +30,7 @@ public class LearningModeActivity extends AppCompatActivity {
     private int score;
     private ViewGroup layout;
     private ImageView image;
+    TextView scoreView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,30 +55,31 @@ public class LearningModeActivity extends AppCompatActivity {
         layout = (ViewGroup) findViewById(R.id.activity_learning_mode);
 
         nextPerson();
+
+        scoreView = (TextView) findViewById(R.id.score_textview);
+        String scoreString = String.format(getResources().getString(R.string.score),counter,score);
+        scoreView.setText(scoreString);
+
     }
 
     public void onGuess(View v){
-        TextView counterView = (TextView) findViewById(R.id.counter);
-        TextView scoreView = (TextView) findViewById(R.id.score);
         EditText textView = (EditText) findViewById(R.id.guess_name);
         Editable text = textView.getEditableText();
         String name = text.toString();
         Person per = persons.get(counter);
 
         counter++;
-        String count = Integer.toString(counter);
-        counterView.setText(count);
 
         if(per.getName().toLowerCase().equals(name.trim().toLowerCase())){
             score++;
-            String sco = Integer.toString(score);
-            scoreView.setText(sco);
             scoreView.setTextColor(Color.GREEN);
-            counterView.setTextColor(Color.GREEN);
         } else{
             scoreView.setTextColor(Color.RED);
-            counterView.setTextColor(Color.RED);
         }
+
+        String scoreString = String.format(getResources().getString(R.string.score),score,counter);
+        scoreView.setText(scoreString);
+
         DAO.setScore(score);
         DAO.setCount(counter);
         textView.setText("");
