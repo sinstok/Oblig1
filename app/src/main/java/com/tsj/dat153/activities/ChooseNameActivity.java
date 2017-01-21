@@ -3,6 +3,7 @@ package com.tsj.dat153.activities;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.ParcelFileDescriptor;
 import android.support.v7.app.AppCompatActivity;
@@ -52,14 +53,42 @@ public class ChooseNameActivity extends AppCompatActivity {
         if (fromWhere == 1) {
             String currentPhoto = intent.getStringExtra("picture");
             Bitmap imageBitmap = BitmapFactory.decodeFile(currentPhoto);
+            imageBitmap = getResizedBitmap(imageBitmap, 1315, 973);
             DAO.addPerson(new Person(name, imageBitmap));
         } else if (fromWhere == 2) {
             String currentPhoto = intent.getStringExtra("picture");
             Bitmap bitmap = BitmapFactory.decodeFile(currentPhoto);
+            bitmap = getResizedBitmap(bitmap, 1315, 973);
             DAO.addPerson(new Person(name, bitmap));
         }
         Intent intent2 = new Intent(this, NameListActivity.class);
         startActivity(intent2);
+
+    }
+
+    public Bitmap getResizedBitmap(Bitmap bm, int newHeight, int newWidth) {
+
+        int width = bm.getWidth();
+
+        int height = bm.getHeight();
+
+        float scaleWidth = ((float) newWidth) / width;
+
+        float scaleHeight = ((float) newHeight) / height;
+
+        // create a matrix for the manipulation
+
+        Matrix matrix = new Matrix();
+
+        // resize the bit map
+
+        matrix.postScale(scaleWidth, scaleHeight);
+
+        // recreate the new Bitmap
+
+        Bitmap resizedBitmap = Bitmap.createBitmap(bm, 0, 0, width, height, matrix, false);
+
+        return resizedBitmap;
 
     }
 }
