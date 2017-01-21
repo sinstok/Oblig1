@@ -11,6 +11,7 @@ import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -46,8 +47,9 @@ public class MainActivity extends AppCompatActivity {
     protected  void onResume(){
         super.onResume();
         TextView scoreTV = (TextView) findViewById(R.id.score_textview);
-        String lastScore = getResources().getString(R.string.last_score);
-        scoreTV.setText(lastScore + " " + DAO.getScore() + "/" + DAO.getCount());
+        String lastScoreRes = getResources().getString(R.string.last_score);
+        String lastScore = String.format(lastScoreRes,DAO.getScore(),DAO.getCount());
+        scoreTV.setText(lastScore);
     }
 
     public void toNameList(View view){
