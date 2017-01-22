@@ -66,6 +66,7 @@ public class NameListActivity extends AppCompatActivity {
         });
     }
 
+    //Brukes ikke
     public void viewImage(Person p){
         Intent intent = new Intent(this, ShowPictureActivity.class);
         intent.putExtra("name", p.getName());

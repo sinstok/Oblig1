@@ -47,18 +47,15 @@ public class ChooseNameActivity extends AppCompatActivity {
             return;
         }
 
-        //Bitmap imageBitmap = (Bitmap) intent.getParcelableExtra("picture");
         int fromWhere = (int) intent.getIntExtra("whereTo", 0);
 
         if (fromWhere == 1) {
             String currentPhoto = intent.getStringExtra("picture");
             Bitmap imageBitmap = BitmapFactory.decodeFile(currentPhoto);
-            imageBitmap = getResizedBitmap(imageBitmap, 1315, 973);
             DAO.addPerson(new Person(name, imageBitmap));
         } else if (fromWhere == 2) {
             String currentPhoto = intent.getStringExtra("picture");
             Bitmap bitmap = BitmapFactory.decodeFile(currentPhoto);
-            bitmap = getResizedBitmap(bitmap, 1315, 973);
             DAO.addPerson(new Person(name, bitmap));
         }
         Intent intent2 = new Intent(this, NameListActivity.class);
@@ -66,27 +63,39 @@ public class ChooseNameActivity extends AppCompatActivity {
 
     }
 
+    //Bruker den ikke for øyeblikket, men den er her hvis vi trenger den.
     public Bitmap getResizedBitmap(Bitmap bm, int newHeight, int newWidth) {
 
-        int width = bm.getWidth();
+        int oriWidth = bm.getWidth();
 
-        int height = bm.getHeight();
+        int oriHeight = bm.getHeight();
 
-        float scaleWidth = ((float) newWidth) / width;
 
-        float scaleHeight = ((float) newHeight) / height;
+        float scaleWidth = ((float) newWidth) / oriWidth;
+
+        float scaleHeight = ((float) newHeight) / oriHeight;
 
         // create a matrix for the manipulation
 
         Matrix matrix = new Matrix();
 
+
         // resize the bit map
 
-        matrix.postScale(scaleWidth, scaleHeight);
+        if(oriWidth > oriHeight){
+            matrix.postRotate(90);
+            matrix.postScale(scaleWidth, scaleHeight);
+            matrix.postRotate(-90);
+        } else {
+            matrix.postScale(scaleWidth, scaleHeight);
+        }
+
 
         // recreate the new Bitmap
 
-        Bitmap resizedBitmap = Bitmap.createBitmap(bm, 0, 0, width, height, matrix, false);
+        Bitmap resizedBitmap = Bitmap.createBitmap(bm, 0, 0, oriWidth, oriHeight, matrix, false);
+
+
 
         return resizedBitmap;
 

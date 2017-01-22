@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.tsj.dat153.database.DAO;
 import com.tsj.dat153.model.Person;
@@ -31,13 +32,11 @@ public class ShowPictureActivity extends AppCompatActivity {
 
         persons = DAO.getPersonList();
 
-        ViewGroup layout = (ViewGroup) findViewById(R.id.activity_show_picture);
-
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
         Bitmap image = DAO.getBitmap(name);
-        ImageView view = new ImageView(this);
-        layout.addView(view);
+        ImageView view = (ImageView) findViewById(R.id.show_picture);
+
         if (image == null) {
             view.setImageResource(R.drawable.lionel_richie);
         } else {
