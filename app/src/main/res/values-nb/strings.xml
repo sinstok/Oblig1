@@ -11,7 +11,7 @@
     <string name="activity_choose_name">Velg navn</string>
     <string name="activity_choose_picture">Velg bilde</string>
     <string name="activity_add_name">Legg til navn til bildet</string>
-    <string name="score">Poengsum</string>
+    <string name="score">Poengsum: %1$d/%2$d</string>
     <string name="photo">Legg til person</string>
     <string name="choose_name">Navn</string>
     <string name="choose_name_button">Lagre</string>

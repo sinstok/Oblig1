@@ -44,7 +44,7 @@
                 android:id="@+id/score_textview"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:text="Siste poengsum: 0/0"
+                android:text="@string/last_score"
                 android:textColor="@android:color/white"
                 android:gravity="center"
                 android:background="@android:color/darker_gray"/>
